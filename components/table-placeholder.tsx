@@ -1,4 +1,6 @@
-import RefreshButton from './refresh-button'
+/* FROM TEMPLATE */
+
+import RefreshButton from "./refresh-button";
 
 export default function TablePlaceholder() {
   return (
@@ -25,5 +27,5 @@ export default function TablePlaceholder() {
         ))}
       </div>
     </div>
-  )
+  );
 }
