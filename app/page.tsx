@@ -5,13 +5,13 @@ import Link from "next/link";
 import { Suspense } from "react";
 import SignIn from "@/components/signIn";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 export const preferredRegion = "home";
 export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center">
+    <main className="grow flex flex-col items-center justify-center pointer-events-auto">
       <h1 className="pt-4 pb-8 bg-gradient-to-br from-blue-600 to-slate-700 bg-clip-text text-center text-4xl font-medium text-transparent md:text-7xl">MealWithMe</h1>
 
       <SignIn />
