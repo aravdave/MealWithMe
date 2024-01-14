@@ -4,6 +4,7 @@ import Header from "./header";
 import "./globals.css";
 import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   metadataBase: new URL("https://meal-with-me.vercel.app/"),
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             {children}
             <Toaster />
+            <Analytics />
           </div>
         </Providers>
       </body>
