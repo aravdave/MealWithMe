@@ -52,7 +52,7 @@ export function Availability() {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Edit status</DialogTitle>
-            <DialogDescription>Make changes to your status here. Click save when you're done.</DialogDescription>
+            <DialogDescription>Make changes to your status here. Click save when you&apos;re done.</DialogDescription>
           </DialogHeader>
           <ProfileForm />
         </DialogContent>
@@ -68,7 +68,7 @@ export function Availability() {
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle>Edit status</DrawerTitle>
-          <DrawerDescription>Make changes to your status here. Click save when you're done.</DrawerDescription>
+          <DrawerDescription>Make changes to your status here. Click save when you&apos;re done.</DrawerDescription>
         </DrawerHeader>
         <ProfileForm className="px-4" />
         <DrawerFooter className="pt-2">
