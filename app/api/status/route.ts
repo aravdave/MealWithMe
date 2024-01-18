@@ -6,7 +6,7 @@ import * as z from "zod";
 const statusCreateSchema = z.object({
   time: z.string(),
   flexibility: z.string(),
-  relativeFlexibility: z.string(),
+  relativeFlexibility: z.coerce.string(),
   duration: z.string(),
 });
 

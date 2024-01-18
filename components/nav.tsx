@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { BookUser, Soup, type Icon as LucideIcon } from "lucide-react";
+import { BookUser, Soup, LucideIcon } from "lucide-react";
 
 type Icon = LucideIcon;
 

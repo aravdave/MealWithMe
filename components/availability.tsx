@@ -23,6 +23,7 @@ enum RelativeFlexibilityEnum {
   before = "before",
   after = "after",
   both = "both",
+  undefined = "undefined",
 }
 
 enum DurationEnum {
@@ -83,12 +84,12 @@ export function Availability() {
 
 function ProfileForm({ className }: React.ComponentProps<"form">) {
   const { register, handleSubmit, watch } = useForm<AvailabilityFormInput>();
-  let showWhenFlexible = watch("flexibility") !== "None" && watch("flexibility") !== undefined;
-  console.log("flexibility");
   const flexibility = watch("flexibility");
+  let showWhenFlexible = flexibility !== ("None" as FlexibilityEnum) && flexibility !== undefined;
+  console.log("flexibility");
 
   async function onSubmit(data: AvailabilityFormInput) {
-    data.relativeFlexibility = data.flexibility === "None" ? "undefined" : data.relativeFlexibility;
+    data.relativeFlexibility = data.flexibility === ("None" as FlexibilityEnum) ? undefined : data.relativeFlexibility;
     const response = await fetch(`/api/status`, {
       method: "POST",
       headers: {
@@ -111,7 +112,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
     <form className={cn("grid items-start gap-4", className)} onSubmit={handleSubmit(onSubmit)}>
       <div className="grid gap-2">
         <Label htmlFor="time">When are you eating?</Label>
-        <Input type="time" {...register("time")} />
+        <Input required type="time" {...register("time", { required: true })} />
       </div>
       <div className="grid gap-2">
         <Label htmlFor="flexibility">How flexible are you?</Label>
